@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "516787473614",
+    "project_id": "videospeil",
+    "storage_bucket": "videospeil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516787473614:android:4c2e43e000c32ae4bc149f",
+        "android_client_info": {
+          "package_name": "com.example.videospeil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516787473614-5o23mobgeilecsedbdbs0o60rbpab8ff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWbxIGZsw1P0Y54seQuVsrSp9vPoIEMc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516787473614-5o23mobgeilecsedbdbs0o60rbpab8ff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

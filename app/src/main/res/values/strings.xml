@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Videospeil</string>
+    <string name="game_poster">Game Poster</string>
+    <string name="game_title">Game title</string>
+    <string name="no_results_found">No Results Found</string>
+    <string name="retry">Retry</string>
+    <string name="result_could_not_be_loaded">Result could not be loaded</string>
+    <string name="game_list">Game List</string>
+    <string name="log_out">Log out</string>
+    <string name="enter_email">Enter email</string>
+</resources>
