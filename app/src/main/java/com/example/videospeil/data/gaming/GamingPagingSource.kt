@@ -1,4 +1,4 @@
-package com.example.videospeil.data
+package com.example.videospeil.data.gaming
 
 import androidx.paging.PagingSource
 import com.example.videospeil.api.Api

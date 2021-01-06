@@ -8,4 +8,18 @@
     <string name="game_list">Game List</string>
     <string name="log_out">Log out</string>
     <string name="enter_email">Enter email</string>
+    <string name="your_favourites_here">Your Favourites here</string>
+    <string name="results_could_not_be_loaded">Results could not be loaded</string>
+    <string name="go_to_page">Go To Page</string>
+    <string name="favourites">Favourites</string>
+    <string name="see_posts">See Posts</string>
+    <string name="create_post">Create Post</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_in">Login in</string>
+    <string name="need_new_account">Need new Account?</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="register">Register</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_message">Enter message</string>
 </resources>

@@ -3,28 +3,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/myblack"
     tools:context=".ui.HomeFragment">
 
-    <Button
-        android:id="@+id/button"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:text="@string/game_list"
-        android:textSize="20sp"
-        android:textStyle="italic" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/logout_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="50dp"
-        android:text="@string/log_out"
-        android:textSize="20sp"
-        android:textStyle="italic" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/app_icon" />
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/app_icon"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="VideoSpeil"
+                android:textAlignment="center"
+                android:textColor="@color/mypink"
+                android:textSize="40sp" />
+
+            <Button
+                android:id="@+id/gamesListButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/app_title"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="50dp"
+                android:drawableLeft="@drawable/list"
+                android:drawableTint="@color/white"
+                android:text="@string/game_list"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/favouritesButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gamesListButton"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:drawableLeft="@drawable/favourites"
+                android:drawableTint="@color/white"
+                android:text="@string/favourites"
+                android:textSize="20sp"
+
+                />
+
+            <Button
+                android:id="@+id/see_posts_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/favouritesButton"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:drawableLeft="@drawable/posts"
+                android:drawableTint="@color/white"
+                android:text="@string/see_posts"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/create_posts_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/see_posts_button"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:drawableLeft="@drawable/create_posts"
+                android:drawableTint="@color/white"
+                android:text="@string/create_post"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/create_posts_button"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp"
+                android:drawableLeft="@drawable/signout"
+                android:drawableTint="@color/white"
+                android:text="@string/log_out"
+                android:layout_marginBottom="40dp"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

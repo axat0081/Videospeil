@@ -21,7 +21,7 @@
         android:background="@drawable/gradient" />
 
     <TextView
-        android:id="@+id/game_title_text_view"
+        android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/image_view"
