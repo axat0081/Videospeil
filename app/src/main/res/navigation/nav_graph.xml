@@ -22,6 +22,12 @@
         <action
             android:id="@+id/action_homeFragment_to_favouritesFragment"
             app:destination="@id/favouritesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createPostsFragment"
+            app:destination="@id/createPostsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_postsFragment"
+            app:destination="@id/postsFragment" />
     </fragment>
     <fragment
         android:id="@+id/gamesListFragment"
@@ -70,4 +76,14 @@
         android:name="com.example.videospeil.ui.FavouritesFragment"
         android:label="Favourites"
         tools:layout="@layout/fragment_favourites" />
+    <fragment
+        android:id="@+id/createPostsFragment"
+        android:name="com.example.videospeil.ui.CreatePostsFragment"
+        android:label="Send Post"
+        tools:layout="@layout/fragment_create_posts" />
+    <fragment
+        android:id="@+id/postsFragment"
+        android:name="com.example.videospeil.ui.PostsFragment"
+        android:label="Posts"
+        tools:layout="@layout/fragment_posts_layout" />
 </navigation>

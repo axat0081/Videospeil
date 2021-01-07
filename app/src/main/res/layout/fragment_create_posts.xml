@@ -6,56 +6,70 @@
     android:background="@color/myblack"
     tools:context=".ui.CreatePostsFragment">
 
-    <ImageView
-        android:id="@+id/app_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/app_icon" />
-
-    <EditText
-        android:id="@+id/poster_name_text_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/app_icon"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@color/white"
-        android:drawableLeft="@drawable/email"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/mypink"
-        android:hint="@string/enter_name"
-        android:padding="10dp"
-        android:textColorHint="@color/mypink"
-        android:textSize="20sp" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/message_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/poster_name_text_view"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@color/white"
-        android:drawableLeft="@drawable/ic_baseline_message_24"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/mypink"
-        android:hint="@string/enter_message"
-        android:padding="10dp"
-        android:textColorHint="@color/mypink"
-        android:textSize="20sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/create_posts_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/message_text_view"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
-        android:text="Create Post"
-        android:textSize="20sp"/>
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logo" />
+
+            <EditText
+                android:id="@+id/poster_name_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/app_icon"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/email"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/mypink"
+                android:hint="@string/enter_name"
+                android:maxLines="1"
+                android:padding="10dp"
+                android:textColor="@color/mypink"
+                android:textColorHint="@color/mypink"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/message_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/poster_name_text_view"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_message_24"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/mypink"
+                android:hint="@string/enter_message"
+                android:maxLines="3"
+                android:padding="10dp"
+                android:textColor="@color/mypink"
+                android:textColorHint="@color/mypink"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/create_posts_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/message_text_view"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="50dp"
+                android:text="Create Post"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
@@ -17,7 +18,9 @@ object AppModule {
         .baseUrl(Api.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
     @Provides
     @Singleton
-    fun providesApi(retrofit: Retrofit):Api =retrofit.create(Api::class.java)
+    fun providesApi(retrofit: Retrofit): Api = retrofit.create(Api::class.java)
+
 }
