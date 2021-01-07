@@ -84,6 +84,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/mypink"
                 android:textSize="20sp" />
+
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
