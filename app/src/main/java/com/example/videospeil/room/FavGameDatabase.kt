@@ -9,7 +9,7 @@ import javax.inject.Inject
 import javax.inject.Provider
 
 
-@Database(entities = [FavGame::class], version = 4)
+@Database(entities = [FavGame::class], version = 5)
 abstract class FavGameDatabase : RoomDatabase() {
     abstract fun favGameDao(): FavGameDoa
     class Callback @Inject constructor(
@@ -20,7 +20,7 @@ abstract class FavGameDatabase : RoomDatabase() {
             super.onCreate(db)
             val dao = database.get().favGameDao()
             applicationScope.launch {
-                dao.insert(FavGame("Your Favourites will appear here"))
+                dao.insert(FavGame("Your Favourites will appear here",null))
             }
         }
     }

@@ -10,8 +10,8 @@ class GameRepository @Inject constructor(private val api: Api) {
     fun getGames(query: String) =
         Pager(
             config = PagingConfig(
-                pageSize = 10,
-                maxSize = 30,
+                pageSize = 5,
+                maxSize = 15,
                 enablePlaceholders = false
 
             ),

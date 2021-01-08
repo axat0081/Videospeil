@@ -11,6 +11,13 @@ interface Api {
 
     @GET("games")
     suspend fun getGames(
-        @Query("page") page: String,
+        @Query("page") page: Int,
+        @Query("page_size") pageSize: Int
     ): GameResults
+    @GET("games")
+    suspend fun getGames(
+        @Query("page")page: Int,
+        @Query("page_size") pageSize: Int,
+        @Query("genres")genres:String
+    )
 }

@@ -16,6 +16,7 @@ import androidx.paging.LoadState
 import com.example.videospeil.R
 import com.example.videospeil.adapter.GamesLoadStateAdapter
 import com.example.videospeil.adapter.GamingAdapter
+import com.example.videospeil.data.favourites.FavGameViewModel
 import com.example.videospeil.data.gaming.GamesViewModel
 import com.example.videospeil.databinding.FragmentGamesListBinding
 import com.example.videospeil.model.GameResults
@@ -61,7 +62,6 @@ class GamesListFragment : Fragment(R.layout.fragment_games_list),
         viewModel.games.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
-        setHasOptionsMenu(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

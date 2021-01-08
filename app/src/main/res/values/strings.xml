@@ -20,6 +20,11 @@
     <string name="need_new_account">Need new Account?</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="register">Register</string>
-    <string name="enter_name">Enter Name</string>
     <string name="enter_message">Enter message</string>
+    <string name="login">Login</string>
+    <string name="some_glimpses">Some Glimpses-</string>
+    <string name="video_clip">Video Clip-</string>
+    <string name="no_favourites_yet">No Favourites Yet</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="upload">Upload</string>
 </resources>

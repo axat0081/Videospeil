@@ -9,6 +9,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class FavGame(
     val name: String,
+    val image:String?,
     @PrimaryKey(autoGenerate = true) val id: Int = 0
 ) : Parcelable {
 
