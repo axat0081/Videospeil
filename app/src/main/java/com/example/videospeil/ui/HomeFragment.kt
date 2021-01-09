@@ -7,6 +7,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.videospeil.R
 import com.example.videospeil.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.onesignal.OneSignal
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +22,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (mAuth.currentUser == null) {
             sendUserToLogin()
         }
+        //OneSignal.startInit(context).init()
+        //OneSignal.setSubscription(true)
+        val dataRef = FirebaseDatabase.getInstance().reference.child("Users")
+        val mAuth = FirebaseAuth.getInstance()
+       /* OneSignal.idsAvailable { userId, _ ->
+            if(mAuth.currentUser==null)
+                sendUserToLogin()
+            else
+            dataRef.child(mAuth.currentUser!!.uid).child("NotificationKey").setValue(userId)
+        }*/
+        //OneSignal.setInFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
         binding.apply {
             gamesListButton.setOnClickListener {
                 sendUserToGameLists()
@@ -35,6 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
             logoutButton.setOnClickListener {
                 mAuth.signOut()
+                OneSignal.setSubscription(false)
                 sendUserToLogin()
             }
         }

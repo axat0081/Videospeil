@@ -36,8 +36,4 @@ object AppModule {
     @Singleton
     fun providesUserIId(): String = FirebaseAuth.getInstance().currentUser!!.uid.toString()
 
-    @Provides
-    @Singleton
-    fun providesFirebaseStorageRef(): StorageReference =
-        FirebaseStorage.getInstance().getReference("Videos")
 }

@@ -86,4 +86,9 @@
         android:name="com.example.videospeil.ui.PostsFragment"
         android:label="Posts"
         tools:layout="@layout/fragment_posts_layout" />
+    <activity
+        android:id="@+id/videoActivity"
+        android:name="com.example.videospeil.ui.VideoActivity"
+        android:label="activity_video"
+        tools:layout="@layout/activity_video" />
 </navigation>

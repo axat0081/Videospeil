@@ -5,8 +5,6 @@ import com.google.firebase.storage.StorageReference
 import javax.inject.Inject
 
 class VideosRepository @Inject constructor(
-    private val storeRef:StorageReference,
-    private val dataRef:DatabaseReference
 ) {
 
 }

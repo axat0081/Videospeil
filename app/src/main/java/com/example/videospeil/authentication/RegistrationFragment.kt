@@ -17,6 +17,9 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentRegistrationBinding.bind(view)
+        if(mAuth.currentUser!=null){
+            sendUserToHome()
+        }
         binding.apply {
             registerButton.setOnClickListener {
                 val email = emailTextView.text.toString()
