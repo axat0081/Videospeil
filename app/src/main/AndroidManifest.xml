@@ -8,9 +8,9 @@
     <application
         android:name=".HomeApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/foreground"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/foreground"
+        android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.Videospeil">
         <activity android:name=".ui.UploadVideoActivity"></activity>
