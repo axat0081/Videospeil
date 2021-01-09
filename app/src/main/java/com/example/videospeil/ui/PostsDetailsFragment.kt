@@ -90,8 +90,8 @@ class PostsDetailsFragment : Fragment(R.layout.fragment_posts_details) {
         builder.setCancelable(false)
         val inflater = layoutInflater
         val view = inflater.inflate(R.layout.input_comment_layout, null)
-        val commenterNameEditText:EditText = view.findViewById(R.id.commenter_name)
-        val commentEditText:EditText = view.findViewById(R.id.comment_edit_text)
+        val commenterNameEditText: EditText = view.findViewById(R.id.commenter_name)
+        val commentEditText: EditText = view.findViewById(R.id.comment_edit_text)
         builder.setView(view)
         builder.setPositiveButton(
             "Comment"
@@ -103,11 +103,11 @@ class PostsDetailsFragment : Fragment(R.layout.fragment_posts_details) {
                     .show()
                 dialog.cancel()
             } else {
-                val newComment = Comments(name, comment)
                 viewModel.createComment(
                     id = args.post.id,
                     comments = Comments(name, comment),
-                    context = requireContext()
+                    context = requireContext(),
+                    posterId = args.post.posterId
                 )
 
             }
@@ -118,7 +118,7 @@ class PostsDetailsFragment : Fragment(R.layout.fragment_posts_details) {
         builder.show()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater){
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.comment_menu, menu)
     }

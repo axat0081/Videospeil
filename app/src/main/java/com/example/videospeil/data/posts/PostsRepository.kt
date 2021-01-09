@@ -6,10 +6,8 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.example.videospeil.model.Comments
 import com.example.videospeil.model.PostResults
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
+import com.example.videospeil.notifications.SendNotifications
+import com.google.firebase.database.*
 import javax.inject.Inject
 
 class PostsRepository @Inject constructor(
@@ -55,7 +53,7 @@ class PostsRepository @Inject constructor(
 
     suspend fun insertPosts(post: PostResults.Posts, context: Context) {
         val key = post.id
-        Log.d("Creating",post.posterId)
+        Log.d("Creating", post.posterId)
         dataRef.child("posts").child(key).setValue(post).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(context, "Post Sent", Toast.LENGTH_SHORT).show()
@@ -66,7 +64,7 @@ class PostsRepository @Inject constructor(
         }
     }
 
-    suspend fun insertComment(id: String, comments: Comments, context: Context) {
+    suspend fun insertComment(id: String, comments: Comments, context: Context, posterId: String) {
         val key = dataRef.child("posts").child(id).child("commentsList").push().key
         dataRef.child("posts").child(id).child("commentsList")
             .child(key!!).setValue(comments).addOnCompleteListener { task ->
@@ -80,10 +78,25 @@ class PostsRepository @Inject constructor(
                     ).show()
                 }
             }
+        FirebaseDatabase.getInstance().reference.child("Users").child(posterId)
+            .child("NotificationKey").addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val notifyKey = snapshot.value.toString()
+                    SendNotifications(
+                        message = "Someone has commented on your post",
+                        heading = "New Comment",
+                        key = notifyKey
+                    )
+                }
+            })
     }
 
     fun getCommentList(id: String): MutableLiveData<List<Comments>> {
-        Log.d("Score",id)
+        Log.d("Score", id)
         val list = ArrayList<Comments>()
         dataRef.child("posts").child(id).child("commentsList")
             .addValueEventListener(object : ValueEventListener {
@@ -93,7 +106,7 @@ class PostsRepository @Inject constructor(
 
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     for (snapshot in dataSnapshot.children) {
-                        Log.d("Score","Collecting")
+                        Log.d("Score", "Collecting")
                         list.add(
                             Comments(
                                 commenterName = snapshot.child("commenterName").value.toString(),
@@ -103,7 +116,7 @@ class PostsRepository @Inject constructor(
                     }
                 }
             })
-        Log.d("ScoreRepo",list.size.toString())
+        Log.d("ScoreRepo", list.size.toString())
         val result = MutableLiveData<List<Comments>>()
         result.value = list
         return result

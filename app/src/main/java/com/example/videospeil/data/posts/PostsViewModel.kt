@@ -45,9 +45,9 @@ class PostsViewModel @ViewModelInject constructor(
         }
     }
 
-    fun createComment(id: String, comments: Comments, context: Context) {
+    fun createComment(id: String, comments: Comments, context: Context,posterId : String) {
         viewModelScope.launch {
-            repository.insertComment(id, comments, context)
+            repository.insertComment(id, comments, context,posterId)
         }
         val k = numId.value
         numId.value = k!! + 1

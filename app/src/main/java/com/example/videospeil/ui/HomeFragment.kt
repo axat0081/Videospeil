@@ -24,17 +24,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (mAuth.currentUser == null) {
             sendUserToLogin()
         }
-        //OneSignal.startInit(context).init()
-        //OneSignal.setSubscription(true)
+        OneSignal.startInit(context).init()
+        OneSignal.setSubscription(true)
         val dataRef = FirebaseDatabase.getInstance().reference.child("Users")
         val mAuth = FirebaseAuth.getInstance()
-       /* OneSignal.idsAvailable { userId, _ ->
+        OneSignal.idsAvailable { userId, _ ->
             if(mAuth.currentUser==null)
                 sendUserToLogin()
             else
             dataRef.child(mAuth.currentUser!!.uid).child("NotificationKey").setValue(userId)
-        }*/
-        //OneSignal.setInFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+        }
+        OneSignal.setInFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
         binding.apply {
             gamesListButton.setOnClickListener {
                 sendUserToGameLists()
