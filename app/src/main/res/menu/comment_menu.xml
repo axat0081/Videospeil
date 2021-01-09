@@ -5,5 +5,5 @@
         android:id="@+id/action_comment"
         android:title="Comment"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="never" />
+        app:showAsAction="" />
 </menu>

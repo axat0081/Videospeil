@@ -37,6 +37,7 @@ class PostsRepository @Inject constructor(
                     set.add(
                         PostResults.Posts(
                             id = snapshot.child("id").value.toString(),
+                            posterId = snapshot.child("posterId").value.toString(),
                             posterName = snapshot.child("posterName").value.toString(),
                             message = snapshot.child("message").value.toString(),
                             creationDate = snapshot.child("creationDate").value.toString(),
@@ -54,8 +55,8 @@ class PostsRepository @Inject constructor(
 
     suspend fun insertPosts(post: PostResults.Posts, context: Context) {
         val key = post.id
-        post.id = key
-        dataRef.child("posts").child(key!!).setValue(post).addOnCompleteListener { task ->
+        Log.d("Creating",post.posterId)
+        dataRef.child("posts").child(key).setValue(post).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(context, "Post Sent", Toast.LENGTH_SHORT).show()
             } else {

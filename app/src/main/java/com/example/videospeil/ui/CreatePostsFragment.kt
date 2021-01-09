@@ -11,6 +11,7 @@ import com.example.videospeil.data.posts.PostsViewModel
 import com.example.videospeil.databinding.FragmentCreatePostsBinding
 import com.example.videospeil.model.Comments
 import com.example.videospeil.model.PostResults
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,9 +34,16 @@ class CreatePostsFragment : Fragment(R.layout.fragment_create_posts) {
                     val key = FirebaseDatabase.getInstance().reference.child("posts").push().key
                     posterNameTextView.text.clear()
                     messageTextView.text.clear()
+                    val userId = FirebaseAuth.getInstance().currentUser!!.uid
                     val list = ArrayList<Comments>()
                     list.add(Comments(commenterName = "Dev Team", comment = "Enter comments here"))
-                    val post = PostResults.Posts(id = key!!,posterName = name, message = message, commentsList = list)
+                    val post = PostResults.Posts(
+                        id = key!!,
+                        posterId = userId,
+                        posterName = name,
+                        message = message,
+                        commentsList = list
+                    )
                     viewModel.createPosts(post, requireContext())
                 }
             }

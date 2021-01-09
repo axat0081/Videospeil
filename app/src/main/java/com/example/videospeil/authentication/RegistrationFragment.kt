@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.videospeil.R
 import com.example.videospeil.databinding.FragmentRegistrationBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     private var _binding: FragmentRegistrationBinding? = null
@@ -17,7 +18,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentRegistrationBinding.bind(view)
-        if(mAuth.currentUser!=null){
+        if (mAuth.currentUser != null) {
             sendUserToHome()
         }
         binding.apply {
@@ -36,6 +37,9 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                             if (task.isSuccessful) {
                                 Toast.makeText(context, "Account Created", Toast.LENGTH_SHORT)
                                     .show()
+                                if (mAuth.currentUser != null)
+                                    FirebaseDatabase.getInstance().reference.child("Users")
+                                        .child(mAuth.currentUser!!.uid).setValue("")
                                 sendUserToHome()
                             } else {
                                 Toast.makeText(
@@ -47,7 +51,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                         }
                 }
             }
-            alreadyHaveAnAccountTextView!!.setOnClickListener {
+            alreadyHaveAnAccountTextView.setOnClickListener {
                 sendUserToLogin()
             }
         }

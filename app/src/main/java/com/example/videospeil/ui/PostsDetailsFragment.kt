@@ -43,6 +43,10 @@ class PostsDetailsFragment : Fragment(R.layout.fragment_posts_details) {
                 setHasFixedSize(true)
                 itemAnimator = null
             }
+            createdTextView.text = args.post.creationDate
+            createCommentTextView.setOnClickListener {
+                createComment()
+            }
             getComments(args.post.id)
         }
         FirebaseDatabase.getInstance().reference.child("posts").child(args.post.id)
@@ -73,7 +77,7 @@ class PostsDetailsFragment : Fragment(R.layout.fragment_posts_details) {
                     TODO("Not yet implemented")
                 }
             })
-        setHasOptionsMenu(true)
+        //setHasOptionsMenu(true)
     }
 
     private fun getComments(id: String) {
