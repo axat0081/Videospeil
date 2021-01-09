@@ -25,8 +25,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 sendUserToRegistration()
             }
             loginButton.setOnClickListener {
-                val email = emailTextView.text.toString()
-                val password = passwordTextView.text.toString()
+                val email = emailTextView.text.toString().trim()
+                val password = passwordTextView.text.toString().trim()
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                     Toast.makeText(context, "Email and Password cannot be empty", Toast.LENGTH_SHORT).show()
                 } else {

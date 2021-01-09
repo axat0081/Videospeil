@@ -121,7 +121,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             gameVideoView.setVideoPath(args.game.clip.video)
             gameVideoView.setOnPreparedListener { mp ->
                 videoProgressBar.isVisible = false
-                mp.setOnVideoSizeChangedListener { mp, width, height ->
+                mp.setOnVideoSizeChangedListener { mp, _, _ ->
                     mp.start()
                 }
             }

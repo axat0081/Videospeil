@@ -36,4 +36,7 @@ object AppModule {
     @Singleton
     fun providesUserIId(): String = FirebaseAuth.getInstance().currentUser!!.uid.toString()
 
+    @Provides
+    @Singleton
+    fun providesStorageRef() :StorageReference = FirebaseStorage.getInstance().reference
 }

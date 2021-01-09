@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_homeFragment_to_postsFragment"
             app:destination="@id/postsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_videoGalleryFragment"
+            app:destination="@id/videoGalleryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_videoGalleryFragment2"
+            app:destination="@id/videoGalleryFragment" />
     </fragment>
     <fragment
         android:id="@+id/gamesListFragment"
@@ -92,9 +98,9 @@
     </fragment>
     <activity
         android:id="@+id/videoActivity"
-        android:name="com.example.videospeil.ui.VideoActivity"
-        android:label="activity_video"
-        tools:layout="@layout/activity_video" />
+        android:name="com.example.videospeil.ui.UploadVideoActivity"
+        android:label="Upload Video"
+        tools:layout="@layout/activity_uploadvideo" />
     <fragment
         android:id="@+id/postsDetailsFragment"
         android:name="com.example.videospeil.ui.PostsDetailsFragment"
@@ -103,5 +109,23 @@
         <argument
             android:name="post"
             app:argType="com.example.videospeil.model.PostResults$Posts" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoGalleryFragment"
+        android:name="com.example.videospeil.ui.VideoGalleryFragment"
+        android:label="Video Gallery"
+        tools:layout="@layout/fragment_video_gallery">
+        <action
+            android:id="@+id/action_videoGalleryFragment_to_videoDetailsFragment2"
+            app:destination="@id/videoDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDetailsFragment2"
+        android:name="com.example.videospeil.ui.VideoDetailsFragment"
+        android:label="Video"
+        tools:layout="@layout/fragment_video_details">
+        <argument
+            android:name="video"
+            app:argType="com.example.videospeil.model.Videos" />
     </fragment>
 </navigation>

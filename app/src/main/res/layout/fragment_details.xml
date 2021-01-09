@@ -133,11 +133,20 @@
                 android:textColor="@color/purple_200"
                 android:textSize="30sp" />
 
+            <TextView
+                android:id="@+id/video_note_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Video_glimpse_text_view"
+                android:layout_marginStart="30dp"
+                android:text="@string/allow_some_time_for_video_to_load"
+                android:textColor="@color/mypink" />
+
             <ProgressBar
                 android:id="@+id/video_progress_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/Video_glimpse_text_view"
+                android:layout_below="@id/video_note_text_view"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="160dp" />
 
@@ -145,7 +154,7 @@
                 android:id="@+id/game_video_view"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_below="@id/Video_glimpse_text_view"
+                android:layout_below="@id/video_note_text_view"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp" />
