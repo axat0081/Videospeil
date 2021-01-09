@@ -37,6 +37,7 @@ class VideoActivity : AppCompatActivity() {
             videoView.setMediaController(mediaController)
             videoView.start()
             uploadButton.setOnClickListener {
+                chooseVideo()
                 uploadVideo()
             }
         }

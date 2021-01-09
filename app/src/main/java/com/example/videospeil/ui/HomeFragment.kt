@@ -1,9 +1,11 @@
 package com.example.videospeil.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.videospeil.MainActivity
 import com.example.videospeil.R
 import com.example.videospeil.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -46,12 +48,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             createPostsButton.setOnClickListener {
                 sendUserToCreatePosts()
             }
+            uploadVideosButton.setOnClickListener {
+                sendUserToVideos()
+            }
             logoutButton.setOnClickListener {
                 mAuth.signOut()
                 OneSignal.setSubscription(false)
                 sendUserToLogin()
             }
         }
+    }
+
+    private fun sendUserToVideos() {
+        val intent = Intent(context,VideoActivity::class.java)
+        startActivity(intent)
     }
 
     private fun sendUserToLogin() {

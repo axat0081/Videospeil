@@ -85,10 +85,23 @@
         android:id="@+id/postsFragment"
         android:name="com.example.videospeil.ui.PostsFragment"
         android:label="Posts"
-        tools:layout="@layout/fragment_posts_layout" />
+        tools:layout="@layout/fragment_posts_layout" >
+        <action
+            android:id="@+id/action_postsFragment_to_postsDetailsFragment"
+            app:destination="@id/postsDetailsFragment" />
+    </fragment>
     <activity
         android:id="@+id/videoActivity"
         android:name="com.example.videospeil.ui.VideoActivity"
         android:label="activity_video"
         tools:layout="@layout/activity_video" />
+    <fragment
+        android:id="@+id/postsDetailsFragment"
+        android:name="com.example.videospeil.ui.PostsDetailsFragment"
+        android:label="Post Details"
+        tools:layout="@layout/fragment_posts_details" >
+        <argument
+            android:name="post"
+            app:argType="com.example.videospeil.model.PostResults$Posts" />
+    </fragment>
 </navigation>

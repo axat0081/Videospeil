@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.videospeil.databinding.PostsDisplayLayoutBinding
+import com.example.videospeil.model.GameResults
 import com.example.videospeil.model.PostResults
 
-class PostsAdapter :
+class PostsAdapter(private val listener: OnItemClickListener) :
     ListAdapter<PostResults.Posts, PostsAdapter.PostsViewHolder>(DiffCallBack()) {
     class DiffCallBack : DiffUtil.ItemCallback<PostResults.Posts>() {
         override fun areItemsTheSame(oldItem: PostResults.Posts, newItem: PostResults.Posts) =
@@ -29,8 +30,25 @@ class PostsAdapter :
         holder.bind(item!!)
     }
 
+    interface OnItemClickListener {
+        fun onItemCLick(post: PostResults.Posts)
+    }
+
     inner class PostsViewHolder(private val binding: PostsDisplayLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item = getItem(position)
+                    if (item != null) {
+                        listener.onItemCLick(item)
+                    }
+                }
+            }
+        }
+
         fun bind(post: PostResults.Posts) {
             binding.apply {
                 posterNameTextView.text = post.posterName

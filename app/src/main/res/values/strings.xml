@@ -27,4 +27,12 @@
     <string name="no_favourites_yet">No Favourites Yet</string>
     <string name="enter_name">Enter Name</string>
     <string name="upload">Upload</string>
+    <string name="create_video_content">Create Video Content</string>
+    <string name="poster_name">Poster Name</string>
+    <string name="the_details_of_your_post_appear_here">The details of your post appear here</string>
+    <string name="comment">Comments</string>
+    <string name="commenter_name">Commenter name</string>
+    <string name="comment_sample">A cricket bat is a specialised piece of equipment used by batters in the sport of cricket to hit the ball, typically consisting of a cane handle attached to a flat-fronted willow-wood blade. It may also be used by a batter who is making their ground to avoid a run out, if they hold the bat and touch the ground with it. The length of the bat may be no more than 38 inches (965 mm) and the width no more than 4.25 inches (108 mm). Its use is first mentioned in 1624.</string>
+    <string name="enter_comment">Enter comment</string>
+    <string name="sideways_scrollable">(Sideways scrollable)</string>
 </resources>

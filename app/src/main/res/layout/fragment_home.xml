@@ -93,10 +93,20 @@
                 android:textStyle="italic" />
 
             <Button
+                android:id="@+id/upload_videos_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:layout_below="@id/create_posts_button"
+                android:text="@string/create_video_content"
+                />
+            <Button
                 android:id="@+id/logout_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/create_posts_button"
+                android:layout_below="@id/upload_videos_button"
                 android:layout_marginStart="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="50dp"

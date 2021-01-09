@@ -13,7 +13,6 @@ class GamesViewModel @ViewModelInject constructor(
 ) : ViewModel() {
     companion object {
         const val QUERY = "1"
-        const val GENRE_QUERY = "Action"
     }
     private val dataQuery = MutableLiveData(QUERY)
     val games = dataQuery.switchMap {
